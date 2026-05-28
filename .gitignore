@@ -17,3 +17,7 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# extra files
+orm_connection.txt
+sql_connection.txt

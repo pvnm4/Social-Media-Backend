@@ -1,4 +1,19 @@
-__pycache__
-venv/
+# Virtual Environment
+.venv/
+
+# Environment Variables
 .env
-.vscode
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Alembic cache
+*.mako
+
+# OS files
+.DS_Store
+Thumbs.db

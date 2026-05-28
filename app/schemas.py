@@ -7,8 +7,10 @@ class PostBase(BaseModel):
     content: str
     published: bool = True
 
+
 class CreatePost(PostBase):
     pass
+
 
 class UserOut(BaseModel):
     id: int
@@ -17,6 +19,7 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class Post(PostBase):
     id: int
@@ -27,6 +30,7 @@ class Post(PostBase):
     class Config:
         orm_mode = True
 
+
 class PostOut(BaseModel):
     Post: Post
     vote: int
@@ -34,9 +38,11 @@ class PostOut(BaseModel):
     class Config:
         orm_mode = True
 
+
 class UserCreate(BaseModel):
     email: EmailStr
     password: str
+
 
 class UserOut(BaseModel):
     id: int
@@ -45,6 +51,7 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class UserLogin(BaseModel):
     email: EmailStr
@@ -55,8 +62,10 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
+
 class TokenData(BaseModel):
     id: Optional[int] = None
+
 
 class Vote(BaseModel):
     post_id: int

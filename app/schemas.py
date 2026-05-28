@@ -7,7 +7,6 @@ class PostBase(BaseModel):
     content: str
     published: bool = True
 
-
 class CreatePost(PostBase):
     pass
 
@@ -16,7 +15,7 @@ class UserOut(BaseModel):
     email:EmailStr
     created_at: datetime
 
-    class config:
+    class Config:
         orm_mode = True
 
 class Post(PostBase):
@@ -25,7 +24,14 @@ class Post(PostBase):
     #owner_id: int
     owner: UserOut
 
-    class config:
+    class Config:
+        orm_mode = True
+
+class PostOut(BaseModel):
+    Post: Post
+    vote: int
+
+    class Config:
         orm_mode = True
 
 class UserCreate(BaseModel):
@@ -37,7 +43,7 @@ class UserOut(BaseModel):
     email:EmailStr
     created_at: datetime
 
-    class config:
+    class Config:
         orm_mode = True
 
 class UserLogin(BaseModel):
